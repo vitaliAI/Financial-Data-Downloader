@@ -7,5 +7,6 @@
         <file>icons/price2.png</file>
         <file>icons/fund.png</file>
         <file>icons/fundamental_data.png</file>
+        <file>icons/settings.png</file>
     </qresource>
 </RCC>

@@ -29,7 +29,7 @@ def downloand_ticker_price_data(ticker: str = 'FB', start=None, end=None, action
     return df
 
 
-def downloand_ticker_fundamental_data(ticker: str = 'FB', start=None, end=None, actions=True) -> pd.DataFrame:
+def downloand_ticker_option_data(ticker: str = 'FB', start=None, end=None, actions=True) -> pd.DataFrame:
     """Download yahoo tickers
         :Parameters:
             tickers : str, list
@@ -44,8 +44,26 @@ def downloand_ticker_fundamental_data(ticker: str = 'FB', start=None, end=None, 
                 Download dividend + stock splits data. Default is False
     """
     ticker_inst = yf.Ticker(ticker=ticker)
-    df = ticker_inst.history(start=start, end=end, actions=actions)
-    return ticker_inst.option_chain()[0].T
+    return ticker_inst.option_chain()
+
+
+def downloand_ticker_fundamentals_data(ticker: str = 'FB', start=None, end=None, actions=True) -> pd.DataFrame:
+    """Download yahoo tickers
+        :Parameters:
+            tickers : str, list
+                List of tickers to download
+            start: str
+                Download start date string (YYYY-MM-DD) or _datetime.
+                Default is 1900-01-01
+            end: str
+                Download end date string (YYYY-MM-DD) or _datetime.
+                Default is now
+            actions: bool
+                Download dividend + stock splits data. Default is False
+    """
+    ticker_inst = yf.Ticker(ticker=ticker)
+    return ticker_inst
+
 
 
 if __name__ == '__main__':
