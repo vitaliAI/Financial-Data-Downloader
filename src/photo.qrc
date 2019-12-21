@@ -1,0 +1,11 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file>icons/browse.png</file>
+        <file>icons/delta.png</file>
+        <file>icons/price.png</file>
+        <file>icons/price2.png</file>
+        <file>icons/fund.png</file>
+        <file>icons/fundamental_data.png</file>
+    </qresource>
+</RCC>
