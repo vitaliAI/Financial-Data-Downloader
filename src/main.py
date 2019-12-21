@@ -1,7 +1,9 @@
 from datetime import datetime
 import sys
 from PySide2.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PySide2.QtCore import QFile
+from yahoo_downloader.data import (
+    downloand_ticker_price_data,
+)
 from ui_mainwindow import Ui_MainWindow
 
 
@@ -34,7 +36,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         start = self.start_date.date().toPython()
         end = self.end_date.date().toPython()
         location = self.save_as.text()
-        print(f'{ticker} - {start} - {end} - {location}')
+        if ticker:
+            price_data = downloand_ticker_price_data(ticker=ticker, start=str(start), end=str(end), actions=True)
+            if location:
+                price_data.to_csv(location)
+                self.progressBar.setValue(100)
 
 
 if __name__ == "__main__":

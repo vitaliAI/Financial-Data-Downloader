@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file 'main.ui',
 # licensing of 'main.ui' applies.
 #
-# Created: Sat Dec 21 20:45:09 2019
+# Created: Sat Dec 21 21:45:12 2019
 #      by: pyside2-uic  running on PySide2 5.13.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
         self.ticker.setFont(font)
         self.ticker.setObjectName("ticker")
         self.pushButton_2 = QtWidgets.QPushButton(self.Price)
-        self.pushButton_2.setGeometry(QtCore.QRect(210, 240, 161, 41))
+        self.pushButton_2.setGeometry(QtCore.QRect(200, 260, 161, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.pushButton_2.setFont(font)
@@ -99,6 +99,10 @@ class Ui_MainWindow(object):
         self.browse.setIcon(icon)
         self.browse.setIconSize(QtCore.QSize(25, 25))
         self.browse.setObjectName("browse")
+        self.progressBar = QtWidgets.QProgressBar(self.Price)
+        self.progressBar.setGeometry(QtCore.QRect(40, 220, 461, 16))
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setObjectName("progressBar")
         self.tabWidget.addTab(self.Price, "")
         self.Fundamentals = QtWidgets.QWidget()
         self.Fundamentals.setObjectName("Fundamentals")
