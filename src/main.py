@@ -12,6 +12,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__(parent)
         self.setupUi(self)
         self.pricing_data_download_button()
+        self.handle_sidebar()
         self.handle_browse()
         self.init_ui()
 
@@ -23,6 +24,20 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def handle_browse(self):
         self.browse.clicked.connect(self._browse)
+
+    def handle_sidebar(self):
+        self.priceData.clicked.connect(self._price_data_tab)
+        self.priceData_2.clicked.connect(self._fundamental_data_tab)
+        self.priceData_3.clicked.connect(self._options_data_tab)
+
+    def _price_data_tab(self):
+        self.tabWidget.setCurrentIndex(0)
+
+    def _fundamental_data_tab(self):
+        self.tabWidget.setCurrentIndex(1)
+
+    def _options_data_tab(self):
+        self.tabWidget.setCurrentIndex(2)
 
     def _browse(self):
         save_location, _ = QFileDialog.getSaveFileName(self, caption='Save as', dir='.', filter="*.csv")
