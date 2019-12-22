@@ -26,6 +26,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def handle_browse(self):
         self.browse.clicked.connect(self._browse)
         self.browse_4.clicked.connect(self._browse_4)
+        self.browse_3.clicked.connect(self._browse_3)
 
     def handle_sidebar(self):
         self.priceData.clicked.connect(self._price_data_tab)
@@ -54,6 +55,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         save_location, _ = QFileDialog.getSaveFileName(self, caption='Save as', dir='.', filter="*.csv")
         self.save_as_4.setText(save_location)
 
+    def _browse_3(self):
+        save_location, _ = QFileDialog.getSaveFileName(self, caption='Save as', dir='.', filter="*.csv")
+        self.save_as_3.setText(save_location)
+
     def data_download_button(self):
         self.pushButton_2.clicked.connect(self._download_pricing_data)
         self.pushButton_7.clicked.connect(self._download_option_data)
@@ -63,7 +68,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ticker = self.ticker_2.text()
         location = self.save_as_3.text()
         combobox = self.comboBox.currentText()
-        if ticker & location:
+        if ticker and location:
             data = self._fetch_data_by_combobox(key=combobox, ticker=ticker)
             data.to_csv(location)
             self.progressBar_2.setValue(100)
