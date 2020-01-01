@@ -9,3 +9,6 @@ Run the following command to convert static resource files into python code:
 Run the following command to convert designer layout to code:
 
 `pyside2-uic main.ui > ui_mainwindow.py`
+
+
+![alt text](https://github.com/vitaliAI/Financial-Data-Downloader/blob/master/docs/images/dark_orange_ui.PNG)
