@@ -12,3 +12,6 @@ Run the following command to convert designer layout to code:
 
 
 ![alt text](https://github.com/vitaliAI/Financial-Data-Downloader/blob/master/docs/images/dark_orange_ui.PNG)
+
+
+![alt text](https://github.com/vitaliAI/Financial-Data-Downloader/blob/master/docs/images/ui_with_icons.PNG)
